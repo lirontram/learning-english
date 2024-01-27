@@ -1,0 +1,28 @@
+<form #registrationForm="ngForm" (ngSubmit)="SubmitRegistrationForm()">
+    <div> Category Name:
+<mat-form-field>
+    <mat-label> Category Name: 
+        <input matInput [(ngModel)]="CategoryName" name="CategoryName" required>
+    </mat-label>
+    </mat-form-field>
+</div>
+<div> Source Language: 
+    <mat-form-field>
+    <mat-label> Source Language: 
+        <input matInput [(ngModel)]="SourceLanguage" name="Source Language">
+    </mat-label>
+    </mat-form-field>
+</div>
+<div> Target Language:
+    <mat-form-field>
+    <mat-label> Target Language: 
+        <input matInput [(ngModel)]="TargetLanguage" name="TargetLanguage">
+    </mat-label>
+</mat-form-field>
+</div>
+<button
+type="submit" mat-raised-button 
+color = "grey">
+save
+</button>
+</form>
