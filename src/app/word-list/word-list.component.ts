@@ -4,6 +4,7 @@ import { nomber } from '../Shered/Model/nomber';
 import { MatTableModule } from '@angular/material/table';
  import { MatIconModule } from '@angular/material/icon';
  import { RouterModule } from '@angular/router';
+import { Category } from '../Shered/Model/Category';
  
 @Component({
   selector: 'app-word-list',
@@ -15,7 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 export class WordListComponent {
   displayedColumns: string[] = ['name', 'no', 'last edit', 'Actions'];
 
-  dataSource = [new color("fruits"), new nomber("color")]
+  dataSource = [new Category(0,"","","")]
 
 }
 

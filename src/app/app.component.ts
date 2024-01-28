@@ -5,6 +5,7 @@ import { HeaderComponent } from "./header/header.component";
 import { color } from './Shered/Model/color';
 import {FooterComponent } from './footer/footer.component';
 import { FormsComponent } from './forms/forms.component';
+import { Category } from './Shered/Model/Category';
 
 @Component({
     selector: 'app-root',

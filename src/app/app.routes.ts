@@ -6,6 +6,7 @@ import { FormsComponent } from './forms/forms.component';
 
 export const routes: Routes = [
     {path:'', component:WordListComponent},
-    {path:'forms', component:FormsComponent}
+    {path:'forms', component:FormsComponent},
+    {path:'category', component:FormsComponent}
 ]
 
