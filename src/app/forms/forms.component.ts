@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
   styleUrl: './forms.component.css'
 })
 export class FormsComponent {
-  category: Category = new Category(0,'','','');
+  category: Category = new Category(0,'','Language','Language');
  
   
 
@@ -25,7 +25,7 @@ constructor(private services: services, private router: Router) {}
 onSubmitRegistration() {
   console.log("Form submitted!");
   this.services.add(this.category);
-  this.router.navigate(['/']);
+  this.router.navigate(['/wordList']);
   
 }
   

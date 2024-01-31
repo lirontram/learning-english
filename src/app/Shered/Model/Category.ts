@@ -3,16 +3,16 @@ import { TranslatedWord } from "./TranslatedWord";
 export class Category {
     id : number;
     name : string;
-    origin :"";
-    target :"";
+    origin :"Language";
+    target :"Language";
     lastUpdateDate = new Date();
     words : TranslatedWord[] = [];
 
     constructor(
         id: number,
         name : string,
-        origin : "",
-        target : "", ) 
+        origin : "Language",
+        target : "Language", ) 
         {
         this.id = id;
         this.name = name;

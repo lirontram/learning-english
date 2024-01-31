@@ -6,19 +6,21 @@
                    class="form-control">
                    <div class="error" *ngIf="f.submitted">
                     <span>category name is required</span>
-                </div>
+                    <div>
+                      {{category.name}}
+                    </div>
+                  </div>
     </div>
           <div class="form-group">
             <label>Source Language</label>
             <input  name="SourceLanguage" type="text"
-                   class="form-control">
+                   class="field" value="English" readonly>
           </div>
-       
-      
+         
         <div class="form-group">
           <label>Target Language</label>
           <input name="TargetLanguage" type="text"
-                 class="form-control">
+                 class="field" value="Hebrew" readonly>
         </div>
       <div>
 
