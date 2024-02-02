@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { color } from '../Shered/Model/color';
-import { nomber } from '../Shered/Model/nomber';
 import { MatTableModule } from '@angular/material/table';
  import { MatIconModule } from '@angular/material/icon';
  import { RouterModule } from '@angular/router';
-import { Category } from '../Shered/Model/Category';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { services } from '../services/services';
-import { CdkTableDataSourceInput } from '@angular/cdk/table';
+import { Category } from '../Shered/Model/category';
+import { CategoryService } from '../services/category.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteCategoryDialogComponent } from '../delete-category-dialog/delete-category-dialog.component';
  
 @Component({
   selector: 'app-word-list',
@@ -16,20 +15,29 @@ import { CdkTableDataSourceInput } from '@angular/cdk/table';
   imports: [MatTableModule, MatIconModule,RouterModule, CommonModule, MatButtonModule],
   templateUrl: './word-list.component.html',
   styleUrl: './word-list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+ 
 })
 export class WordListComponent implements OnInit {
-  constructor(private services : services) {}
+  displayedColums: string[] =['name', 'number', 'last edit', 'actions' ,];
+
+  constructor(private categoryService : CategoryService, private dialog: MatDialog) {}
+  categorys : Category[]=[] 
+
   ngOnInit(): void {
-    this.AllCategorys = this.services.list();
+    this.categorys = this.categoryService.list()
   }
-  AllCategorys : Category[] =[] ;
+ 
+deleteCategory(id:number, name:string) {
+  const dialogRef = this.dialog.open(DeleteCategoryDialogComponent,{data: name,});
   
-
-
- displayedColums = ['name', 'no', 'last edit', 'Actions'];
-
-  dataSource = [new Category(0,"","Language","Language")]
-
+  dialogRef.afterClosed().subscribe(deletionConfirmed => {
+    if(deletionConfirmed){
+      this.categoryService.delete(id);
+      this.categorys=this.categoryService.list()
+    }
+  }
+    );
 }
+}
+
 

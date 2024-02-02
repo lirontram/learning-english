@@ -1,8 +1,16 @@
 
-footer {
-    background-color: #d5cfef;
-    
-    text-align: center;
+.mat-icon {
+  background-color: #d5cfef;
+  display: flex;
+  justify-content: flex-end;
+ padding: 10px ;
+ position: fixed;
+ bottom: 0;
+ width: 99%;
+  font-size: 24px;
+  color: #333;
+  
+
   }
   
   

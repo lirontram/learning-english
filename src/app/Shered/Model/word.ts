@@ -1,8 +1,7 @@
-import { WordSpecies } from "./word-species"
+import { WordSpecies } from "./word-species";
 
-export interface Word {
-    fruits: any;
-    nomber: any
-    color: any
-    species: WordSpecies
-}
+export class Word {
+    constructor(
+ public word :string, 
+public type: WordSpecies) { }
+ }  

@@ -1,16 +1,13 @@
-<form #f="ngForm" (ngSubmit)="onSubmitRegistration()">
+<form #SubmitRegistrationForm="ngForm"  (ngSubmit)="onSubmitRegistration()">
        
           <div class="form-group">
             <label>Category Name</label>
-            <input matInput [(ngModel)]="category.name" name="CategoryName" type="text"
-                   class="form-control">
-                   <div class="error" *ngIf="f.submitted">
+            <input matInput [(ngModel)]="currentCategory.name" name="CategoryName" type="text"
+                   class="form-control" required>
                     <span>category name is required</span>
-                    <div>
-                      {{category.name}}
-                    </div>
+                    
                   </div>
-    </div>
+  
           <div class="form-group">
             <label>Source Language</label>
             <input  name="SourceLanguage" type="text"
@@ -33,6 +30,6 @@
 <button
 type="submit" mat-raised-button 
 color = "grey">
-save
+<a routerLink="/">save</a>
 </button>
 </form>

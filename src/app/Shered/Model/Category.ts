@@ -1,22 +1,23 @@
-import { TranslatedWord } from "./TranslatedWord";
+import { TranslatedWord } from "./translatedWord";
+import { Word } from "./word";
+
+
 
 export class Category {
-    id : number;
-    name : string;
-    origin :"Language";
-    target :"Language";
-    lastUpdateDate = new Date();
-    words : TranslatedWord[] = [];
+    constructor(public id : number,
+        public name : string,
+        public origin : string,
+        public target : string) {
 
-    constructor(
-        id: number,
-        name : string,
-        origin : "Language",
-        target : "Language", ) 
-        {
-        this.id = id;
-        this.name = name;
-        this.origin = origin;
-        this.target = target;
-    }
+}
+       
+   
+        lastUpdateDate = new Date();
+    words : TranslatedWord[] = [];
+    public word : Word[] = []; 
+ 
+
+        
+       
+    
 }

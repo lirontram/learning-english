@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
-import { Category } from '../Shered/Model/Category';
-import { services } from '../services/services';
+import { Category } from '../Shered/Model/category';
+import { CategoryService } from '../services/category.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,21 +15,35 @@ import { Router } from '@angular/router';
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'
 })
-export class FormsComponent {
-  category: Category = new Category(0,'','Language','Language');
+export class FormsComponent implements OnInit{
+ @Input() idString?:string;
+  currentCategory : Category = new Category(0,'','','')
+
+
+ constructor(private categoryService :CategoryService, private router : Router) {}
  
-  
+  ngOnInit(): void {
+   if (this.idString)  {
+    let id:number = parseInt(this.idString);
+const category = this.categoryService.get(id);
+    if (category) {
+    this.currentCategory = category;
 
-constructor(private services: services, private router: Router) {}
+    } 
+}
+  }
 
-onSubmitRegistration() {
-  console.log("Form submitted!");
-  this.services.add(this.category);
-  this.router.navigate(['/wordList']);
-  
+  onSubmitRegistration() {
+ console.log("Form submitted!");
+ if(this.idString) {
+  this.categoryService.update(this.currentCategory)
+ } else {
+  this.categoryService.add(this.currentCategory)
+ }
+ this.router.navigate(['/']);
 }
   
-  }
+}
 
 
 
