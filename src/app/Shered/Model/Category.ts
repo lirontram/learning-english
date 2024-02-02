@@ -1,23 +1,43 @@
 import { TranslatedWord } from "./translatedWord";
-import { Word } from "./word";
 
 
+///export class Category {
+   
+   // lastUpdateDate = new Date();
+  //  words : TranslatedWord[] = [];
+   
+   
+   // constructor(public id : number,
+      //  public name : string,
+      //  public origin : string,
+      //  public target : string) {
 
-export class Category {
-    constructor(public id : number,
-        public name : string,
-        public origin : string,
-        public target : string) {
-
-}
+///}
        
    
-        lastUpdateDate = new Date();
+export class Category {
+    id : number;
+    name : string;
+    origin : String;
+    target : string;
+    lastUpdateDate = new Date();
     words : TranslatedWord[] = [];
-    public word : Word[] = []; 
+    
+    constructor(id: number,
+    name : string,
+    origin : string,
+    target : string) {
+    this.id = id;
+    this.name = name;
+    this.origin = origin;
+    this.target = target;
+    }
+    }
+    
+       
  
 
         
        
     
-}
+

@@ -7,7 +7,7 @@ import { Category } from '../Shered/Model/category';
 export class CategoryService {
   
 categorys = new Map<number, Category>();
-nextId = 0;
+nextId = 1;
  
 
 list() : Category[] {

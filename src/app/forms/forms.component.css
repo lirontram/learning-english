@@ -12,4 +12,15 @@
   padding: 10px;
   }
   
+ .addWord{
+    display: flex;
+    gap: 8px;
+   
+ }
+
+ .add{
+
+    display: flex;
+    gap: 16px;
+ }
  

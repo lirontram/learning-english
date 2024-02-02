@@ -1,5 +1,6 @@
 
-export enum WordSpecies {
-    origin = "origin",
-    target = "target"
-}
+//export enum WordSpecies {
+
+///origin = "hebrew",
+//target = "english"
+//}

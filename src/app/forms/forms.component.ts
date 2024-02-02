@@ -7,11 +7,13 @@ import {MatInputModule} from '@angular/material/input'
 import { Category } from '../Shered/Model/category';
 import { CategoryService } from '../services/category.service';
 import { Router } from '@angular/router';
+import { TranslatedWord } from '../Shered/Model/translatedWord';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-forms',
   standalone: true,
-  imports: [FormsModule,CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule,],
+  imports: [FormsModule,CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule,MatIconModule],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'
 })
@@ -43,6 +45,17 @@ const category = this.categoryService.get(id);
  this.router.navigate(['/']);
 }
   
+addTranslatedWord() {
+  this.currentCategory.words.push(new TranslatedWord("",""));
+}
+removeTranslatedWord(index :number) {
+  this.currentCategory.words.splice(index, 1);
+
+}
+
+
+
+
 }
 
 
