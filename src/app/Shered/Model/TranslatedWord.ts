@@ -1,4 +1,4 @@
-//import { WordSpecies } from "./word-species";
+
 
 
 export class TranslatedWord {
