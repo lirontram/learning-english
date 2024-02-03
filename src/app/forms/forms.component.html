@@ -49,8 +49,9 @@ mat-icon-button
 </button>
       </div>
 
-      <button type="submit" mat-raised-button 
-color = "grey">
+      <button type="submit"
+       mat-raised-button 
+       color = "grey" [disabled]="SubmitRegistrationForm.invalid">
 <a routerLink="/">save</a>
 </button>
 </form> 
