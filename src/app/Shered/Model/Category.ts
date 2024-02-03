@@ -5,9 +5,9 @@ export class Category {
     name : string;
     origin : String;
     target : string;
+    caunt : number | undefined;
     lastUpdateDate = new Date();
-    
-    words : TranslatedWord[] = [];
+   words : TranslatedWord[] = [];
     
     constructor(id: number,
     name : string,
@@ -17,6 +17,7 @@ export class Category {
     this.name = name;
     this.origin = origin;
     this.target = target;
+    this.caunt = this.caunt;
     }
     }
     

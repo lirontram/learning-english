@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../Shered/Model/category';
+import { count } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ export class CategoryService {
   
 categorys = new Map<number, Category>();
 nextId = 1;
+  count: any;
  
 
 list() : Category[] {
@@ -23,6 +25,7 @@ add(newCategory : Category) : void {
   newCategory.id = newId;
   this.categorys.set(newId, newCategory);
   ++this.nextId;
+  ++this.count
 }
 
 update(category : Category) : void {

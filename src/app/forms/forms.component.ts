@@ -9,6 +9,8 @@ import { CategoryService } from '../services/category.service';
 import { Router } from '@angular/router';
 import { TranslatedWord } from '../Shered/Model/translatedWord';
 import { MatIconModule } from '@angular/material/icon';
+import { count } from 'rxjs';
+
 
 @Component({
   selector: 'app-forms',
@@ -20,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class FormsComponent implements OnInit{
  @Input() idString?:string;
   currentCategory : Category = new Category(0,'','','')
+  count: any;
 
 
  constructor(private categoryService :CategoryService, private router : Router) {}
@@ -46,14 +49,19 @@ const category = this.categoryService.get(id);
 }
   
 addTranslatedWord() {
-  this.currentCategory.words.push(new TranslatedWord("",""));
+  this.currentCategory.words.push(new TranslatedWord("","", ""));
+
+  
 }
 removeTranslatedWord(index :number) {
   this.currentCategory.words.splice(index, 1);
 
 }
 
+counter() : void { 
+  this.count++;
 
+}
 
 
 }

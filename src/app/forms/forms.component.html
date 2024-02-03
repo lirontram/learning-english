@@ -27,7 +27,7 @@
         
         <div class="add">
           <h3>Words</h3>
-          <button mat-fab type="button"
+          <button mat-fab type="button" color="grey"
           (click)="addTranslatedWord()">
            <mat-icon>add</mat-icon>
           </button>
@@ -68,7 +68,7 @@ mat-icon-button
       </div>
 
       <button type="submit"
-       mat-raised-button 
+       mat-raised-button (click)="counter()"
        color = "grey" [disabled]="SubmitRegistrationForm.invalid">
 <a routerLink="/">save</a>
 </button>
